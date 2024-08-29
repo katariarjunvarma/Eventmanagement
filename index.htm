@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>My Class Login - Lovely Professional University</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+	body, html {
+		margin: 0;
+		height: 100%;
+	}
+
+	input {
+		border: none;
+	}
+
+	button:focus {
+		outline: none;
+	}
+
+	::-webkit-input-placeholder {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+	::-webkit-input-placeholder .input-line:focus + ::input-placeholder {
+		color: #fff;
+	}
+
+	.input-line:focus {
+		outline: none;
+		border-color: orangered;
+		-webkit-transition: all .7s ease;
+		transition: all .7s ease;
+	}
+
+	.ghost-round {
+		cursor: pointer;
+		background: rgba(255, 255, 255, 0.2);
+		border: 1px solid rgba(255, 255, 255, 0.65);
+		border-radius: 25px;
+		color: rgba(255, 255, 255, 0.65);
+		-webkit-align-self: flex-end;
+		-ms-flex-item-align: end;
+		align-self: flex-end;
+		font-size: 1.4rem;
+		font-family: Montserrat, sans-serif;
+		font-weight: 500;
+		line-height: 2.5em;
+		margin-top: auto;
+		margin-bottom: 25px;
+		-webkit-transition: all .7s ease;
+		transition: all .7s ease;
+	}
+
+	.ghost-round:hover {
+		background: rgba(255, 255, 255, 0.5);
+		color: #fff;
+		font-weight: 600;
+		border-color: orangered;
+		-webkit-transition: all .7s ease;
+		transition: all .7s ease;
+	}
+
+	.input-line {
+		background: none;
+		margin-bottom: 10px;
+		line-height: 2.4em;
+		color: #fff;
+		font-family: Montserrat, sans-serif;
+		font-weight: 500;
+		letter-spacing: 0;
+		letter-spacing: 0.02rem;
+		font-size: 19px;
+		font-size: 1.2rem;
+		border-bottom: 0.075em solid rgba(255, 255, 255, 0.9);
+		-webkit-transition: all .7s ease;
+		transition: all .7s ease;
+	}
+
+.input-line[readOnly] {
+  opacity: 0.25;
+}
+
+	.full-width {
+		width: 100%;
+	}
+
+	.input-fields {
+		margin-top: auto;
+		margin-bottom: auto;
+	}
+
+	.container {
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		-ms-flex-align: center;
+		align-items: center;
+		-webkit-box-pack: center;
+		-webkit-justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
+		background-image: url(1.jpg);
+		background-repeat: round;
+		height: 100%;
+	}
+
+	.content {
+		padding-left: 25px;
+		padding-right: 25px;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-flow: column;
+		-ms-flex-flow: column;
+		flex-flow: column;
+		flex-grow: 1;
+		z-index: 5;
+	}
+
+	.welcome {
+		font-weight: 300;
+		margin-top: 0;
+		text-align: center;
+		font-size: 40px;
+		font-size: 2.5rem;
+		letter-spacing: 0;
+		letter-spacing: 0.05rem;
+	}
+
+	.subtitle {
+		margin-top: 1em;
+		text-align: center;
+		line-height: 1em;
+		font-weight: 400;
+		font-size: 0.75em;
+		letter-spacing: 0;
+		letter-spacing: 0.02rem;
+	}
+
+	.d-none {
+		display: none;
+	}
+
+	.error {
+		color: maroon;
+		text-align: center;
+	}
+
+	.window {
+		z-index: 100;
+		color: #fff;
+		font-family: Montserrat, sans-serif;
+		position: relative;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -ms-flexbox;
+		display: flex;
+		-webkit-flex-flow: column;
+		-ms-flex-flow: column;
+		flex-flow: column;
+		box-shadow: 0 15px 50px 10px rgba(0, 0, 0, 0.2);
+		box-sizing: border-box;
+		height: 560px;
+		width: 360px;
+		background: #fff;
+		border-radius: 10px;
+	}
+
+	.overlay {
+		background: -webkit-linear-gradient(#dba68c00, #d693b900);
+		background: linear-gradient(#509ee7c2, #d693b9);
+		opacity: 0.85;
+		filter: alpha(opacity=85);
+		height: 560px;
+		position: absolute;
+		width: 360px;
+		z-index: 1;
+		border-radius: 10px;
+	}
+
+	@media (max-width: 360px) {
+		.window {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+		}
+
+		.overlay {
+			width: 100%;
+			height: 100%;
+			border-radius: 0;
+		}
+	}
+
+	.power {
+		bottom: 0;
+		margin-bottom: 2em;
+		line-height: 1em;
+		font-weight: 400;
+		letter-spacing: 0;
+		letter-spacing: 0.02rem;
+		text-align: center;
+	}
+
+	.power > img {
+		display: block;
+		max-width: 40%;
+		margin: 5px auto auto;
+		height: auto;
+	}
+</style>
+  <script>
+    window.addEventListener('load', function () {
+      var params = new URLSearchParams(location.search);
+      var id = params.get('id');
+      var reason = params.get('reason');
+      var other = document.querySelector('#other');
+      other.textContent = '';
+      if (params.has('error')) {
+        document.querySelectorAll('.error').forEach(function (n) {
+          n.classList.add('d-none');
+        });
+        // noinspection FallThroughInSwitchStatementJS
+        switch (params.get('error')) {
+          case 'mfa':
+            var mf = document.querySelector('.input-fields > input.input-line[name=m]'),
+              uf = document.querySelector('.input-fields > input.input-line[name=i]'),
+              pf = document.querySelector('.input-fields > input.input-line[name=p]'),
+              st = document.querySelector('.subtitle');
+            pf.classList.add('d-none');
+            uf.readOnly = true;
+            pf.disabled = true;
+            st.classList.add('d-none');
+            mf.classList.remove('d-none');
+            mf.removeAttribute('disabled');
+            mf.focus();
+            break;
+          case 'invalid':
+            document.querySelector('#invalid').classList.remove('d-none');
+            break;
+          case 'blocked':
+            document.querySelector('#blocked').classList.remove('d-none');
+          case 'expired':
+            document.querySelector('#expired').classList.remove('d-none');
+        }
+      }
+      if (params.has('reason') && reason && reason.trim()) {
+        other.classList.remove('d-none');
+        other.textContent = reason.trim();
+      }
+      if (typeof id !== 'undefined' && id && id.trim()) {
+        document.querySelector('[name=i]').value = id.trim();
+      }
+    });
+
+    // New code for redirect based on input length
+    const submitBtn = document.querySelector('button[type="submit"]'); // Select submit button
+
+    submitBtn.addEventListener('click', function(event) {
+      event.preventDefault(); // Prevent default form submission
+
+      const uidInput = document.querySelector('input[name="i"]');
+      const uid = uidInput.value;
+
+      if (uid.length === 5) {
+        // Redirect to admin.html for 5-digit UIDs
+        window.location.href = 'admin.html';
+      } else if (uid.length === 8) {
+        // Redirect to student.html for 8-digit UIDs
+        window.location.href = 'student.html';
+      } else {
+        // Display error message for invalid UID length
+        alert('Invalid UID length. Please enter a 5-digit or 8-digit UID.');
+      }
+    });
+  </script>
+</head>
+<body>
+	<div class='bold-line'></div>
+	<div class='container'>
+		<div class='window'>
+			<div class='overlay'>
+			</div>
+			<form class='content' method="post" action="https://lovelyprofessionaluniversity.codetantra.com/r/l/p">
+				<img src="download.svg" alt="" style="width: 180px; margin-left: 60px;">
+				<div class="welcome">Event Viewer</div>
+				<div class="subtitle">Use your ums credentials to login</div>
+				<div id="invalid" class="subtitle error d-none" role="alert">Invalid credentials</div>
+				<div id="blocked" class="subtitle error d-none" role="alert">Your account has been blocked.<!-- Please contact <a
+						href="tel:+91-1824-517450">+91-1824-517450</a> or <a
+						href="tel:+91-1824-405510">+91-1824-405510</a> for unblocking. -->
+				</div>
+				<div id="expired" class="subtitle error d-none" role="alert">Your password has expired</div>
+				<div id="other" class="subtitle error"></div>
+				<div class="input-fields">
+					<input aria-label="user name" type="text" placeholder="UID or Club ID" class="input-line full-width" name="i" required  />
+					<input aria-label="password" type="password" placeholder="Password" class="input-line full-width" name="p" required/>
+					<input aria-label="MFA Code (OTP)" type="text" placeholder="MFA Code (OTP)" class="input-line full-width d-none" name="m" required disabled autocomplete="off" pattern="^\d{6}$" title="Please enter your current 6 digit OTP"/>
+				</div>
+				<div>
+					<button type="submit" class="ghost-round full-width">Login</button>
+				</div>
+				
+					
+				</div>
+			</form>
+		</div>
+	</div>
+	</body>
+</html>
